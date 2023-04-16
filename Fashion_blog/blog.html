@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Slideshow Images</title>
+    <style>
+       
+       body{
+            margin: 0;
+            overflow-x: hidden;
+            background-image: url("16.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+       }
+
+        /* Slideshow container */
+        .slideshow-container {
+        
+            position: relative;
+            margin: auto;
+        }
+        .img1{
+            width: 100%;
+            height: 800px;
+        }
+
+        /* Make the images invisible by default */
+        .Containers {
+            display: none;
+        }
+
+        /* forward & Back buttons */
+        .Back, .forward {
+            cursor: pointer;
+            position: absolute;
+            top: 48%;
+            width: auto;
+            margin-top: -23px;
+            padding: 17px;
+            color: grey;
+            font-weight: bold;
+            font-size: 19px;
+            transition: 0.4s ease;
+            border-radius: 0 5px 5px 0;
+            user-select: none;
+        }
+
+        /* Place the "forward button" to the right */
+        .forward {
+            right: 0;
+            border-radius: 4px 0 0 4px;
+        }
+
+        /*when the user hovers,add a black background with some little opacity */
+        .Back:hover, .forward:hover {
+        background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Caption Info */
+        .Info {
+            color: #e3e3e3;
+            font-size: 16px;
+            padding: 10px 14px;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Worknumbering (1/3 etc) */
+        .MessageInfo {
+            color: #f2f2f3;
+            font-size: 14px;
+            padding: 10px 14px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The circles or bullets and indicators */
+        .dots {
+            cursor: pointer;
+            height: 16px;
+            width: 16px;
+            margin: 0 3px;
+            background-color: #acc;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.5s ease;
+        }
+
+        .enable, .dots:hover {
+            background-color: #717161;
+        }
+
+        /* Faint animation */
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.4s;
+            animation-name: fade;
+            animation-duration: 1.4s;
+        }
+
+        @-webkit-keyframes fade {
+        from {opacity: .5}
+        to {opacity: 2}
+        }
+
+        @keyframes fade {
+        from {opacity: .5}
+        to {opacity: 2}
+        }
+       .header {
+            font-family: lucida calligraphy;
+            overflow: hidden;
+            background-color: lightpink;
+            overflow: hidden;
+        }
+       
+        .header a {
+            
+            float: left;
+            color: black;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 1vw; 
+            line-height: 25px;
+            border-radius: 4px;
+        }
+
+        .header a.logo {
+            padding-left: 70px;
+        }
+
+        .header a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .header a.active {
+            background-color: black;
+            color: white;
+        }
+
+        .header-right {
+            padding-top: 20px;
+            padding-right: 50px;
+            float: right;
+        }
+        
+        #girl1 {
+            position: relative;
+            cursor: pointer;
+           
+            width: 300px;
+            height: 300px;
+        }
+
+        #para{
+            font-family: Arial, Helvetica, sans-serif;
+            border: 3px solid rgb(212, 159, 168);
+            display: flex;
+            align-items: center;
+            padding: 2%;
+            background-color: rgba(255, 255, 255, 0.512);
+            margin: 0% 25% 5% 25%;
+        }
+        #paragraph{
+            margin-left: 5%;
+            font-weight: bold;
+            font-style: italic;
+        }
+        #girlSh{
+            width: 400px;
+           
+        }
+
+        #video{
+        margin-left: 100px;
+        margin-bottom: 5%; 
+        margin-top: 5%;
+        width: 800px;
+        height: 500px;        
+        }
+        #videoC{
+            border-radius: 7px;
+            margin-left: 17%;
+            margin-bottom: 5%;
+            background-color: #7676737b;
+            width:1000px;
+        }
+        audio{
+            margin-left: 40%;
+        }
+        #fashion{
+            width: 1200px;
+            height:auto;
+            margin: auto;
+
+        }
+
+        #tableT{
+            font-size: 50px;
+            font-family:"Lucida Calligraphy";
+            text-align: center;
+        }
+        #table1 th{
+            background-color: #dda1bc7a;
+            padding: 5px;
+        }
+        #table1 td{
+            background-color: rgba(169, 169, 169, 0.392);
+            padding: 5px;
+        }
+        #table1{
+            text-align: center;
+            margin-left: 20%;
+            width: 60%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .zoom{
+            font-size: 15px;
+            font-family: "Lucida Calligraphy";
+            font-weight: bold;
+            width: 130px;
+            margin-top: 5%;
+            background-color: rgb(223, 155, 189);
+            border-radius: 15px;
+            padding: 10px;
+            opacity: 0.6;
+            transition: 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #z1{
+            margin-left: 1%;
+        }
+        .zoom:hover {
+             opacity: 1;
+        }
+
+        #hr1{
+            margin-top: 5%;
+            height:4px;
+            border-width:0;
+            color:gray;
+            background-color:gray;
+            width:70%;
+        }
+        #hr2{
+            height:4px;
+            border-width:0;
+            background-color:rgba(205, 152, 195, 0.605);
+            width:60%;
+        }
+        #hr3{
+            margin-bottom: 5%;
+            height:4px;
+            border-width:0;
+            background-color:gray;
+            width:60%;
+        }
+
+       #blink{
+        font-size: 120px;
+        color: lightcoral;
+        
+       }
+        #blinkT{
+            display: flex;
+            align-items: center;
+            margin-left: 3%;
+        }
+        form{
+            margin-left: 27%;
+            text-align: center;
+            width: 40%;
+            border-radius: 10px;
+            background-color: #76767161;
+            padding: 50px;
+            margin-bottom: 10%;
+            margin-top: 5%;
+        }
+        fieldset{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 30px;
+            background-color: rgba(255, 182, 193, 0.611);
+            border-radius: 10px;
+            border: none;
+            text-align: right;
+        }
+        label{            
+            margin-left: 50px;
+        }
+        td{
+           padding-top: 10px;
+           padding-bottom: 10px;
+        }
+        input{
+            padding: 2px;
+            width: 260px;
+            border-radius: 7px;
+        }
+        #signUp,#reset{
+            background-color: ghostwhite;
+            font-weight: bold;
+            border-radius: 15px;
+            padding: 7px;
+            border-color: pink;
+            width: 150px;
+        }
+        footer{
+            background-color: #BDB76B;padding: 1px;
+            text-align: center;
+        }
+        #footer{
+            font-family: Blackadder ITC;
+            font-size: 1vw;
+        }
+        label{
+            cursor: pointer;
+        }
+
+        
+    </style>
+  </head>
+  <body>
+
+            <div class="header">
+                <a href="#default" class="logo"><h1>FashionCloths</h1></a>
+                <div class="header-right">
+                <a class="active" href="https://www.macys.com/shop/for-the-home?id=22672&cm_sp=intl_hdr-_-home-_-22672_home" style="padding-left:25px;padding-right: 25px">Home</a>
+                    <a href="https://www.macys.com/shop/mens-clothing?id=1&cm_sp=intl_hdr-_-men-_-1_men"style="padding-left:25px;padding-right: 25px" >Fashion</a>
+                    <a href="https://www.macys.com/shop/womens-clothing?id=118&cm_sp=intl_hdr-_-women-_-118_women" style="padding-left:25px;padding-right: 25px">Beauty</a>
+                    <a href="https://www.macys.com/shop/kids-clothes?id=5991&cm_sp=intl_hdr-_-kids-%26-baby-_-5991_kids-%26-baby" style="padding-left:25px;padding-right: 25px">Lifestyle</a>
+                    <a href="https://www.fashionbug.lk/contact-us/" style="padding-left:25px;padding-right: 25px">Contact</a>
+                    <a href="https://www.fashionbug.lk/product-category/sale/"style="padding-left:25px;padding-right: 25px" >About</a>
+                </div>
+            </div>
+                
+            <!-- Slideshow container -->
+            <div class="slideshow-container fade">
+
+                <!-- Full images with numbers and message Info -->
+                <div class="Containers">
+                <div class="MessageInfo">1 / 3</div>
+                <img src="b.jpg" class="img1">
+                <div class="Info">First caption</div>
+                </div>
+            
+                <div class="Containers">
+                <div class="MessageInfo">2 / 3</div>
+                <img src="e.jpg" class="img1">
+                <div class="Info">Second Caption</div>
+                </div>
+            
+                <div class="Containers">
+                <div class="MessageInfo">3 / 3</div>
+                <img src="f.jpg" class="img1">
+                <div class="Info">Third Caption</div>
+                </div>
+            
+                <!-- Back and forward buttons -->
+                <a class="Back" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="forward" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            
+            <!-- The circles/dots -->
+            <div style="text-align:center">
+                <span class="dots" onclick="currentSlide(1)"></span>
+                <span class="dots" onclick="currentSlide(2)"></span>
+                <span class="dots" onclick="currentSlide(3)"></span>
+            </div> 
+                        <br>
+
+            <div id="para">
+                <img src="sk.jpg" alt="girl with shoes" id="girlSh">
+                <span id="paragraph"><span style="font-size: 30px">"</span> Not only are these the most comfortable heels that will elevate pretty much any outfit, 
+                    but they are also ON SALE right now. I’ll be wearing these into the fall too with denim and a blazer.<span style="font-size: 15px">"</span></span>
+            </div>
+            <div id="videoC">
+                <iframe id="video" src="https://www.youtube.com/embed/ILvBuKDwQQI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        
+            <audio controls>
+                <source src="beats.ogg" type="audio/ogg">
+                <source src="beats.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+              </audio>
+            <hr align="left" id="hr2"><hr align="right" id="hr3">
+
+            <div id="tableT">Attributes of Fashion Clothing</div><br>
+            <div>
+            <table id="table1">
+              
+            <tr>
+                <th>Attribut</th>
+                <th>Levels of Attributes</th>
+                <th>Utility Range</th>
+            </tr>
+            <tr>
+                <td>Brand</td>
+                <td>Designer</td>
+                <td>0.166</td>
+            </tr>
+            <tr>
+                <td>Style</td>
+                <td>High fashion</td>
+                <td>1.523</td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td>Moderate</td>
+                <td>0.523</td>
+            </tr>
+            <tr>
+                <td>Colour</td>
+                <td>Dark</td>
+                <td>1.673</td>
+            </tr>
+        
+            </table>
+              <br><br><br>  
+            </div>
+            
+           
+           
+            <p>
+                <button class="zoom" id="z1" type="button" onclick="zoomin()">Zoom In</button>
+                <button class="zoom" type="button" onclick="zoomout()">Zoom Out</button>
+            </p>
+            <img src="About.jpg" id="fashion"  alt="fashion">
+            <br>
+            
+            <hr id="hr1"><br><br><br>
+
+            <div id="blinkT">
+                <img id="girl1" src="aff.png">
+                <span id="blink">
+                    SHOP NOW...
+                </span>
+            </div>
+            <hr id="hr1">
+            <form>
+                <h2>Contact-Us</h2>
+                <fieldset>
+                    <table>
+                        <tr>
+                            <td><label for="labl1">Name </label></td>
+                            <td>:</td>
+                            <td><input type="text" id="name" placeholder="Your name.."></td>
+                        </tr>
+                        <tr>
+                            <td><label> Telephone number </label></td>
+                            <td>:</td>
+                            <td><input type="text" id="tel" placeholder="Your Tel-No.."></td>
+                        </tr>
+                        <tr>
+                            <td><label>Email </label></td>
+                            <td>:</td>
+                            <td><input type="text" id="email" placeholder="Your Email Address.."></td>
+                        </tr>
+                       
+                    </table>
+                </fieldset><br>     
+                <button type="button" id="signUp" onclick="validate();validateemail()">Sign up</button>
+                <button type="reset" id="reset" onclick="clearFunc()">Reset</button>
+            </form>
+           
+            
+            <footer>
+                <p>&copy;2022. 
+                <span id="footer">FashionCloths_Sri Lanka</span> </p>
+            </footer>
+            
+            <script>
+              var slidePosition = 1;
+                SlideShow(slidePosition);
+
+                // forward/Back controls
+                function plusSlides(n) {
+                SlideShow(slidePosition += n);
+                }
+
+                //  images controls
+                function currentSlide(n) {
+                SlideShow(slidePosition = n);
+                }
+
+                function SlideShow(n) {
+                var i;
+                var slides = document.getElementsByClassName("Containers");
+                var circles = document.getElementsByClassName("dots");
+                if (n > slides.length) {slidePosition = 1}
+                if (n < 1) {slidePosition = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < circles.length; i++) {
+                    circles[i].className = circles[i].className.replace(" enable", "");
+                }
+                slides[slidePosition-1].style.display = "block";
+                circles[slidePosition-1].className += " enable";
+                } 
+
+                girl1.onclick=function(){
+                    let start=Date.now(); //remember start time
+                    let timer=setInterval(function(){
+                        let timePassed=Date.now()-start;
+                        girl1.style.left=timePassed/5+'px';
+                    if(timePassed>5000)clearInterval(timer);        
+                    },20);
+                }
+
+                function zoomin(){
+                    var myImg = document.getElementById("fashion");
+                    var currWidth = myImg.clientWidth;
+                    if(currWidth == 500){
+                        alert("Maximum zoom-in level reached.");
+                    } else{
+                        myImg.style.width = (currWidth + 50) + "px";
+                    } 
+                }
+                function zoomout(){
+                    var myImg = document.getElementById("fashion");
+                    var currWidth = myImg.clientWidth;
+                    if(currWidth == 50){
+                        alert("Maximum zoom-out level reached.");
+                    } else{
+                        myImg.style.width = (currWidth - 50) + "px";
+                    }
+                }
+                var blink = 
+                    document.getElementById('blink');
+        
+                setInterval(function () {
+                    blink.style.opacity = 
+                    (blink.style.opacity == 0 ? 1 : 0);
+                }, 1000); 
+
+                function validate(){
+                    var name=document.getElementById("name").value;
+                    var tel=document.getElementById("tel").value;
+                    var email=document.getElementById("email").value;
+
+                    if (name == null || name == "" && tel == null || tel == "" && email == null || email == "") {
+                        alert("Inputs can't be Blank")
+                    }
+                    else if (tel == null || tel == "") {
+                        alert("Telephone number can't be Blank");
+                    }
+                    else if (email == null || email == "") {
+                        alert("Email Address can't be Blank");
+                    }
+                    else if(name=="" || name==null){
+                        alert("Name can't be Blank...");
+                    }
+                }
+                function validateemail(){  
+                    var emailA=document.getElementById("email").value;  
+                    var atP=emailA.indexOf("@");  
+                    var dotP=emailA.lastIndexOf(".");  
+                    if (atP<1 || dotP<atP+2 || dotP+2>=emailA.length){  
+                        alert("Please enter a valid e-mail address");  
+                        return false;  
+                    }  
+                }  
+                function clearFunc(){
+                    document.getElementById("name").value="";
+                    document.getElementById("tel").value="";
+                    document.getElementById("email").value="";
+                }
+                   
+    </script>
+  </body>
+</html>
